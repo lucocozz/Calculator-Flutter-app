@@ -32,11 +32,17 @@ class Numpad extends StatelessWidget {
               ),
               buttonType2(
                 "%",
-                onPressed: () => refresh(context, () => calculator.insert("%")),
+                onPressed: () => refresh(
+                  context,
+                  () => calculator.insertOperator("%"),
+                ),
               ),
               buttonType2(
                 "÷",
-                onPressed: () => refresh(context, () => calculator.insert("/")),
+                onPressed: () => refresh(
+                  context,
+                  () => calculator.insertOperator("/"),
+                ),
               )
             ],
           ),
@@ -45,16 +51,16 @@ class Numpad extends StatelessWidget {
             children: [
               buttonType1("7",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("7"))),
+                      refresh(context, () => calculator.insertDigit(7))),
               buttonType1("8",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("8"))),
+                      refresh(context, () => calculator.insertDigit(8))),
               buttonType1("9",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("9"))),
+                      refresh(context, () => calculator.insertDigit(9))),
               buttonType2("×",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("*")))
+                      refresh(context, () => calculator.insertOperator("*")))
             ],
           ),
           Row(
@@ -62,16 +68,16 @@ class Numpad extends StatelessWidget {
             children: [
               buttonType1("4",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("4"))),
+                      refresh(context, () => calculator.insertDigit(4))),
               buttonType1("5",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("5"))),
+                      refresh(context, () => calculator.insertDigit(5))),
               buttonType1("6",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("6"))),
+                      refresh(context, () => calculator.insertDigit(6))),
               buttonType2("-",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("-")))
+                      refresh(context, () => calculator.insertOperator("-")))
             ],
           ),
           Row(
@@ -79,16 +85,16 @@ class Numpad extends StatelessWidget {
             children: [
               buttonType1("1",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("1"))),
+                      refresh(context, () => calculator.insertDigit(1))),
               buttonType1("2",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("2"))),
+                      refresh(context, () => calculator.insertDigit(2))),
               buttonType1("3",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("3"))),
+                      refresh(context, () => calculator.insertDigit(3))),
               buttonType2("+",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("+")))
+                      refresh(context, () => calculator.insertOperator("+")))
             ],
           ),
           Row(
@@ -102,15 +108,15 @@ class Numpad extends StatelessWidget {
               ),
               buttonType1("0",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("0"))),
+                      refresh(context, () => calculator.insertZero())),
               buttonType1(".",
                   onPressed: () =>
-                      refresh(context, () => calculator.insert("."))),
+                      refresh(context, () => calculator.insertDot())),
               buttonType2(
                 "=",
                 textColor: Colors.white,
                 color: Theme.of(context).accentColor,
-                onPressed: () {},
+                onPressed: () => refresh(context, () => calculator.equal()),
               )
             ],
           ),

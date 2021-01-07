@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
       create: (_) => Calculator(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Calculator',
+        title: 'Calculatrice',
         theme: lightTheme(),
         darkTheme: darkTheme(),
         home: HomePage(),

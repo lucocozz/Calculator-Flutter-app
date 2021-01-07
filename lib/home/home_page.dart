@@ -1,7 +1,6 @@
-import 'package:calculator/models/calculator_model.dart';
+import 'package:calculator/home/widgets/history.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
 
 import 'widgets/background.dart';
 import 'widgets/display.dart';
@@ -24,9 +23,7 @@ class _HomePageState extends State<HomePage> {
           child: Column(
             children: [
               ThemeSwitch(),
-              Expanded(
-                child: Container(),
-              ),
+              History(),
               DisplayExpression(),
               DisplayResult(),
               SizedBox(height: 30),
@@ -39,11 +36,8 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _refresh(BuildContext context, Function function) {
-    Calculator calculator = Provider.of<Calculator>(context, listen: false);
-
     setState(() {
       function();
-      calculator.evalResult();
     });
   }
 }
